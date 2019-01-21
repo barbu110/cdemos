@@ -20,8 +20,9 @@ sparse_matrix_t* sm_alloc(int width, int height);
 // Release the memory of a sparse matrix.
 void sm_free(sparse_matrix_t *matrix);
 
-// Checks whether the given coordinates exist in the sparse matrix.
-int sm_has(sparse_matrix_t *matrix, int l, int c);
+// Returns the index of an element within the elements array if it exists, and
+// -1 otherwise.
+int sm_get_offset(sparse_matrix_t *matrix, int l, int c);
 
 // Add or modify an element to the sparse matrix.
 void sm_set(sparse_matrix_t *matrix, int l, int c, int v);

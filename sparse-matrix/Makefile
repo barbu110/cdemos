@@ -1,9 +1,9 @@
 CC=gcc
 CFLAGS=-Wall
 
-main: libsparse.o main.c
+populate: main.c sparse.o
 
-libsparse.o: sparse.h sparse.c
+sparse.o: sparse.h sparse.c
 
 clean:
 	rm -f *.o main
