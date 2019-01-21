@@ -25,6 +25,7 @@ int sm_read_from_binary_file(sparse_matrix_t *ptr, char *filename) {
     sm_set(ptr, elem.line, elem.col, elem.value);
   }
 
+  fclose(fp);
   return 0;
 }
 
