@@ -27,14 +27,21 @@ int main(int argc, char **argv) {
     return -1;
   }
 
-  FILE *f = fopen(argv[1], "rb");
-  if (!f) {
+  FILE *fp = fopen(argv[1], "rb");
+  if (!fp) {
     fprintf(stderr, "Cannot open file.\n");
     return -1;
   }
 
+  poly_t *p = NULL;
+  while ((p = p_read_binary(fp)) != NULL) {
+    printf("Found polynomial: ");
+    p_print(p);
+    printf("\n");
 
+    p_free(p);
+  }
 
-  fclose(f);
+  fclose(fp);
   return 0;
 }

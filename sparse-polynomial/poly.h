@@ -2,7 +2,7 @@
 #define POLY_H
 
 typedef struct {
-  double c;
+  int c;
   int exp;
 } term_t;
 
@@ -12,7 +12,7 @@ typedef struct {
   term_t *terms;
 } poly_t;
 
-poly_t *p_alloc(int);
+poly_t *p_alloc();
 
 void p_free(poly_t*);
 
